@@ -18,21 +18,23 @@ export const App = () => {
   const [changeUserInputError, setChangeUserInputError] = useState(false);
 
   const handleTitleChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
+    titleInputChangeEvent: React.ChangeEvent<HTMLInputElement>,
   ): void => {
     setChangeTitleInputError(false);
-    setTitle(event.target.value);
+    setTitle(titleInputChangeEvent.target.value);
   };
 
   const handleUserChange = (
-    event: React.ChangeEvent<HTMLSelectElement>,
+    userSelectChangeEvent: React.ChangeEvent<HTMLSelectElement>,
   ): void => {
     setChangeUserInputError(false);
-    setUserId(+event.target.value);
+    setUserId(+userSelectChangeEvent.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
+  const handleSubmit = (
+    formSubmitEvent: React.FormEvent<HTMLFormElement>,
+  ): void => {
+    formSubmitEvent.preventDefault();
 
     setChangeTitleInputError(!title);
     setChangeUserInputError(!userId);
