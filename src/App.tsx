@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import usersFromServer from './api/users';
 import todosFromServer from './api/todos';
 import { TodoList } from './components/TodoList';
-import { User } from './types/User';
 import { Todo } from './types/Todo';
 
 export const App = () => {
@@ -32,7 +31,7 @@ export const App = () => {
     setUserId(+event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
     setChangeTitleInputError(!title);
